@@ -1,12 +1,13 @@
 import './App.css';
 import React from 'react';
-import { Route, Routes, Link } from "react-router-dom";
+import { Route, Routes, Link, BrowserRouter } from "react-router-dom";
 import About from './About';
 import Home from './Home';
 
 class App extends React.Component {
   render() {
-      return (
+    return (
+      <BrowserRouter basename="/degrowth"> {/* Set the basename here */}
         <div className="App">
           <div>
             <nav>
@@ -15,24 +16,21 @@ class App extends React.Component {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                <Link to="/about">About</Link>
+                  <Link to="/about">About</Link>
                 </li>
                 <li>
-                <Link to="/contact">Contact</Link>
+                  <Link to="/contact">Contact</Link>
                 </li>
               </ul>
             </nav>
           </div>
-            <Routes>
-            <Route exact path="/">
-              <Home />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
+          <Routes>
+            <Route exact path="/" element={<Home />} /> {/* Updated to use element prop */}
+            <Route path="/about" element={<About />} /> {/* Updated to use element prop */}
           </Routes>
-          </div>
-            );
+        </div>
+      </BrowserRouter>
+    );
   }
 }
 
