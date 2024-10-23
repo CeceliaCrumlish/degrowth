@@ -1,8 +1,8 @@
 import './App.css';
 import React from 'react';
 import { Route, Routes, Link } from "react-router-dom";
-import About from './About';
-import Home from './Home';
+import About from './about';
+import Home from './home';
 
 class App extends React.Component {
   render() {
