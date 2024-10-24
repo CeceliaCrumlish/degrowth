@@ -1,13 +1,13 @@
 import './App.css';
 import React from 'react';
-import { Route, Routes, Link, BrowserRouter } from "react-router-dom";
+import { Route, Routes, Link, HashRouter } from "react-router-dom";
 import About from './About';
 import Home from './Home';
 
 class App extends React.Component {
   render() {
     return (
-      <BrowserRouter basename="/degrowth"> {/* Set the basename here */}
+      <HashRouter basename="/degrowth"> {/* Set the basename here */}
         <div className="App">
           <div>
             <nav>
@@ -29,7 +29,7 @@ class App extends React.Component {
             <Route path="/about" element={<About />} /> {/* Updated to use element prop */}
           </Routes>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
